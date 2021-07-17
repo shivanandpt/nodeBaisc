@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "DEBUG=testApp nodemon server.js",
+    "prestart-dev": "npm run lint-fix",
     "start-debug": "DEBUG=* nodemon server.js",
     "lint": "npx eslint *.js",
-    "postlint": "npx eslint *.js --fix",
+    "lint-fix": "npx eslint *.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
