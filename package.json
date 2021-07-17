@@ -1,0 +1,41 @@
+{
+  "name": "nodeWithReact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "DEBUG=testApp nodemon server.js",
+    "start-debug": "DEBUG=* nodemon server.js",
+    "lint": "npx eslint *.js",
+    "postlint": "npx eslint *.js --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Shivanand Patil",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "debug": "^4.3.2",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "npx": "^3.0.0"
+  },
+  "nodemonConfig": {
+    "PORT": 3000,
+    "APP": "testAPP",
+    "MORGAN_OPTIONS": "dev",
+    "ignore": [
+      "test/*",
+      "docs/*"
+    ],
+    "delay": 2500
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
+}
