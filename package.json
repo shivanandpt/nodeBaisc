@@ -9,7 +9,9 @@
     "start-debug": "DEBUG=* nodemon server.js",
     "lint": "npx eslint *.js",
     "lint-fix": "npx eslint *.js --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*.test.js",
+    "test-coverage": "nyc --reporter=html mocha",
+    "show-coverage": "xdg-open coverage/index.html"
   },
   "keywords": [],
   "author": "Shivanand Patil",
@@ -33,11 +35,18 @@
     "delay": 2500
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0"
+    "eslint-plugin-promise": "^5.1.0",
+    "mocha": "^9.0.2",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "include": "*.js",
+    "exclude": "**/*.test.js" 
   }
 }
